@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={popins.className}>
+      <body className={`${popins.className} w-full h-[100vh] relative bg-white`}>
         <Navbar />
         {children}
         <Footer />

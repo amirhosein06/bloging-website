@@ -1,6 +1,6 @@
 const HomePage = () => {
   return ( 
-    <div>helo next ! :/</div>
+    <div className="w-full">helo next ! :/</div>
   );
 }
  
