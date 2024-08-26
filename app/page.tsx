@@ -1,6 +1,10 @@
+import Banner from "@/components/homePage/banner";
+
 const HomePage = () => {
   return ( 
-    <div className="w-full">helo next ! :/</div>
+    <div className="w-full">
+      <Banner/>
+    </div>
   );
 }
  
