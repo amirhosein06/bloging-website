@@ -1,11 +1,13 @@
+import LataestPost from "@/components/homePage/allPosts";
 import Banner from "@/components/homePage/banner";
-import SuggestedPost from "@/components/homePage/sugestedPost";
+import SuggestedPosts from "@/components/homePage/sugestedPost";
 
 const HomePage = () => {
   return ( 
     <div className="w-full">
       <Banner/>
-      <SuggestedPost />
+      <SuggestedPosts />
+      <LataestPost />
     </div>
   );
 }
