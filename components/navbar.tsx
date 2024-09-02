@@ -7,7 +7,7 @@ const caesar_Dressing = Edu_VIC_WA_NT_Beginner({ subsets: ["latin"], weight: "50
 
 const Navbar = () => {
     return ( 
-        <div className="w-full h-16 px-7 py-4 flex items-center sticky top-0 left-0 bg-white dark:bg-black z-[98] shadow dark:shadow-zinc-900">
+        <div id="topicOnPage" className="w-full h-16 px-7 py-4 flex items-center sticky top-0 left-0 bg-white dark:bg-black z-[98] shadow dark:shadow-zinc-900">
             <div className="w-1/2">
                 <Link href="/"><h1 className={`${caesar_Dressing.className} text-2xl text`}>AzBLOG</h1></Link>
             </div>

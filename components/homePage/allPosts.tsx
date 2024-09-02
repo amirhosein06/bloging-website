@@ -11,7 +11,7 @@ const LataestPosts = async () => {
         return response.json();
     }
     const alldata : postType[] = await getdata();
-    const data = alldata.splice(1,);
+    const data = alldata.reverse().splice(1,);
 
     return ( 
         <div className="w-full">

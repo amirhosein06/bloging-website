@@ -7,7 +7,8 @@ const SuggestedPost = async () => {
         const response = await fetch('http://localhost:3000/api/',{cache: "no-store"});
         return response.json();
     }
-    const data = await getdata();
+    const orginalData = await getdata();
+    const data = orginalData.reverse();
     
     return ( 
         <div className="w-full h-96 flex items-center py-5">
