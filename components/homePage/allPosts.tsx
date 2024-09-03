@@ -7,7 +7,7 @@ import { postType } from "@/app/api/route";
 
 const LataestPosts = async () => {
     const getdata = async ()=>{
-        const response = await fetch('http://localhost:3000/api/',{cache: "no-store"});
+        const response = await fetch('https://az-blog-api.vercel.app/posts/',{cache: "no-cache"});
         return response.json();
     }
     const alldata : postType[] = await getdata();
