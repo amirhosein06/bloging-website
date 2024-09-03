@@ -1,17 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock,ArrowRight2 } from "iconsax-react";
-import { postType } from "@/app/api/route";
+import { postType } from "@/postTyping";
 
 
-
-const LataestPosts = async () => {
-    const getdata = async ()=>{
-        const response = await fetch('https://az-blog-api.vercel.app/posts/',{cache: "no-cache"});
-        return response.json();
-    }
-    const alldata : postType[] = await getdata();
-    const data = alldata.reverse().splice(1,);
+const LataestPosts = ({data} : {data : postType[]}) => {
+ 
 
     return ( 
         <div className="w-full">
