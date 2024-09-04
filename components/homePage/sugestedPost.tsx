@@ -22,7 +22,7 @@ const SuggestedPost = ({data} : {data : postType}) => {
                 </div>
                 <h1 className="w-full h-1/6 flex items-center text-5xl capitalize font-medium  text-ellipsis overflow-hidden whitespace-nowrap">{data.title}</h1>
                 <p className="w-full h-3/6 text-zinc-800 dark:text-zinc-500 text-ellipsis overflow-hidden pt-3 pr-4">{data.article[0].content}</p>
-                <div className="w-full h-1/6 flex items-center text-sky-700"><Link href={`/${data.id}`} className="flex items-center">see more <ArrowRight2 size="20" className=" text-sky-700"/></Link></div>
+                <div className="w-full h-1/6 flex items-center text-sky-700"><Link href={`/posts/${data.id}`} className="flex items-center">see more <ArrowRight2 size="20" className=" text-sky-700"/></Link></div>
             </div>
         </div>
      );

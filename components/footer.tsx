@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="h-1/5 flex items-center text-2xl font-medium">About Us</div>
                 <ul className="*:text-lg *:cursor-pointer *:my-1 mt-2 text-zinc-700 dark:text-zinc-300">
                 <li>Mission</li>
-                <li>Me</li>
+                <li><Link href="https://www.linkedin.com/in/amirhosein-zolfaghari06/">Me</Link></li>
                 <li>Newsletter</li>
                 </ul>
             </div>
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             </div>
             <div className="h-[10%] w-full flex justify-center items-center text-sm">
-                Created By<Link className="text-sky-700 mx-1" href="https://www.linkedin.com/in/amirhosein-zolfaghari06/">AmirHosein Zolfaghari</Link>- 2024
+                Created By<Link className="text-sky-700 mx-1" href="https://www.linkedin.com/in/amirhosein-zolfaghari06/">AmirHossein Zolfaghari</Link>- 2024
             </div>
         </div>
      );

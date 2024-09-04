@@ -22,7 +22,7 @@ const LataestPosts = ({data} : {data : postType[]}) => {
                         </div>
                     <h1 className="flex items-center capitalize h-[15%] w-full text-3xl font-medium text-ellipsis overflow-hidden whitespace-nowrap">{item.title}</h1>
                     <div className="h-[6%] w-full flex justify-start">
-                    <Link href={`/${item.id}`} className="hover:pl-1 transition-all text-sm flex items-center text-sky-700">see more <ArrowRight2 size="14" className=" text-sky-700"/></Link>
+                    <Link href={`/posts/${item.id}`} className="hover:pl-1 transition-all text-sm flex items-center text-sky-700">see more <ArrowRight2 size="14" className=" text-sky-700"/></Link>
                     </div>
                 </div>
             ))}
