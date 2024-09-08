@@ -3,16 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import ShareBtn from "./shareBtn";
 import { ArrowLeft,Clock,User } from "iconsax-react";
+import AddComment from "./addComment";
 
 const SinglePost = async ({params}:{params : {id : string}}) => {
     const getdata = async ()=>{
-        const response = await fetch(`https://az-blog-api.vercel.app/posts/${params.id}`);
+        const response = await fetch(`https://az-blog-api.vercel.app/posts/${params.id}`,{cache: "no-cache",
+            next: {
+                tags: ['posts'],
+            }
+        });
         return response.json();
     }
     const data : postType = await getdata();
 
     return ( 
-        <div className="w-3/4 mx-auto bg-white shadow dark:bg-black dark:shadow-zinc-700">
+        <div className="w-3/4 mx-auto bg-white shadow dark:bg-black dark:shadow-zinc-700 pb-7">
             <div className="w-full h-72 overflow-hidden flex justify-center items-center">
             <Image alt={data.title} src={data.img} sizes="100vw" height={0} width={0} style={{width: "100%",height: "auto"}}/>
             </div>
@@ -27,7 +32,7 @@ const SinglePost = async ({params}:{params : {id : string}}) => {
                     <span className="col-start-5 col-span-1 row-start-2 row-span-1 flex justify-end text-zinc-500 dark:text-zinc-800">Read time : {data.readTime}m</span>
                     <span className="col-start-5 col-span-1 row-start-3 row-span-1 flex justify-end text-zinc-500 dark:text-zinc-800 text-lg items-center gap-1"><User size="23" className="text-zinc-500 dark:text-zinc-800"/>{data.writer}</span>
                 </div>
-                <div className="w-full flex flex-col items-center gap-5 mb-20">
+                <div className="w-full flex flex-col items-center gap-5 mb-16">
                     {data.article.map((item,index : number)=>(
                         item.type === "text" ? (
                             <p className="w- text-zinc-900 dark:text-zinc-200 text-lg" key={index}>{item.content}</p>
@@ -40,14 +45,15 @@ const SinglePost = async ({params}:{params : {id : string}}) => {
                         )
                     ))}
                 </div>
-                <div className="w-full">
-                   add commment
-                </div>
-                <div className="w-full flex flex-col items-center">
+                    <AddComment data={data}/>
+                <div className="w-full flex flex-col items-center gap-2">
                     {data.comments.map((item,index : number)=>(
-                        <div key={index} className="w-full h-44 rounded border">
-                            <div className="w-full h-[10%] flex items-center justify-between px-5">{item.user}{item.date}</div>
-                            <div className="h-[90%]">{item.text}</div>
+                        <div key={index} className="w-full h-44 rounded border dark:border-zinc-800 p-5 gap-2 flex items-center flex-col">
+                            <div className="w-full h-[15%] flex items-center justify-between px-5">
+                                <div className="flex gap-1"><User size="23" className="text-zinc-500 dark:text-zinc-800"/>{item.user}</div>
+                                <div className="flex gap-1"><Clock size="19" className="text-zinc-500 dark:text-zinc-800"/>{item.date}</div>
+                            </div>
+                            <div className="h-[85%] w-full rounded dark:bg-zinc-900 bg-zinc-100 p-2">{item.text}</div>
                         </div>
                     ))}
                 </div>
@@ -57,4 +63,3 @@ const SinglePost = async ({params}:{params : {id : string}}) => {
 }
  
 export default SinglePost;
-//,{cache: "no-cache"}
