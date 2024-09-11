@@ -18,7 +18,7 @@ export const postComment = async (e : FormData,data : postType)=>{
         comments: [...data.comments,{
             commnetid: data.comments.length + 1,
             text: commentText,
-            user: "amir",
+            user: "guest user",
             date: newDate.toLocaleDateString()
         }],
         article: data.article
