@@ -37,7 +37,7 @@ const SideBar = () => {
 
             <div className="w-full h-4/6 pl-4">
                 <ul className="w-full h-full flex flex-col gap-14 justify-center">
-                   {[['Home','/'],['Search','/search'],['Categories','#'],['Contact Us','#']].map((item,index)=>(
+                   {[['Home','/'],['Search','/search'],['Categories','/categories'],['Contact Us','https://www.linkedin.com/in/amirhosein-zolfaghari06/']].map((item,index)=>(
                     <li key={index}><Link href={item[1]} className="text-xl hover:pl-2 transition-all">{item[0]}</Link></li>
                    ))} 
                 </ul>
