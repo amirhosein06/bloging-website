@@ -41,7 +41,7 @@ const SinglePost = async ({params}:{params : {id : string}}) => {
                             <Image alt={data.title} src={item.content} sizes="100vw" height={0} width={0} style={{width: "100%",height: "auto"}}/>
                             </div>
                         ) : (
-                            <h1 className="w-full">{item.content}</h1>
+                            <h1 className="w-full text-2xl font-medium h-10">{item.content}</h1>
                         )
                     ))}
                 </div>
