@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${popins.className} w-full h-[100vh] relative bg-white dark:bg-black`} suppressHydrationWarning={true}>
         <Theme>
         <Navbar />
-        <div className="px-3">
+        <div className="md:px-3">
         {children}
         </div>
         <Footer />
