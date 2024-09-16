@@ -1,6 +1,6 @@
 # AZ.blog - bloging Website
 
-### deployed on [] ()
+### deployed on [https://bloging-website-beige.vercel.app/](https://bloging-website-beige.vercel.app/)
 
 ## screenShots
 
