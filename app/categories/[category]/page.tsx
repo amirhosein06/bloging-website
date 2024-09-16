@@ -10,7 +10,7 @@ const showCategory = async ({params}:{params : {category : string}}) => {
         return response.json();
     }
     const data : postType[] = await getdata();
-    const filteredData = data.filter(u=>u.category === params.category);
+    const filteredData = data.filter(u=>u.category.toUpperCase() === params.category.toUpperCase());
     filteredData.length
 
     return ( 
