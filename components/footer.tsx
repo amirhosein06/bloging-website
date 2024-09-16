@@ -25,7 +25,7 @@ const Footer = () => {
                 <ul className="text-xs sm:*:text-lg *:cursor-pointer *:my-1 mt-2 text-zinc-700 dark:text-zinc-300">
                 <li>Contact</li>
                 <li>Refund Ploicy</li>
-                <li>FAQ's</li>
+                <li>FAQs</li>
                 </ul>
             </div>
             <div className="col-start-3 md:col-start-7 col-end-4 md:row-start-1 md:col-end-9 row-span-4 flex flex-col items-center md:items-start md:pl-20 pt-3 md:pt-10">

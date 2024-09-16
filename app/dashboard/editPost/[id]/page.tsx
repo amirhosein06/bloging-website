@@ -13,9 +13,10 @@ const CreateNewPost = ({params}:{params : {id : string}}) => {
     const [ArticleArray, setArticleArray] = useState<articleType[]>([]);
     const articleForm = useRef<HTMLFormElement>(null);
     const [data, setdata] = useState<postType | null>(null);
+    const id = params.id;
 
     useEffect(()=>{
-            fetch(`https://az-blog-api.vercel.app/posts/${params.id}`,{cache: "no-cache"})
+            fetch(`https://az-blog-api.vercel.app/posts/${id}`,{cache: "no-cache"})
             .then(response => response.json())
             .then(dataJson => {setdata(dataJson);setArticleArray(dataJson.article)})
     },[])
