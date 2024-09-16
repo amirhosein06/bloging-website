@@ -14,7 +14,7 @@ const DeleteButton = ({id}:{id:number}) => {
      }
 
     return ( 
-        <button onClick={readyToDeletePost} className="flex items-center justify-center w-1/3 h-[80%] gap-1 border rounded text-red-700 border-red-700"><Trash size="22" className="text-red-700"/>Delete</button>
+        <button onClick={readyToDeletePost} className="text-xs md:text-base flex items-center justify-center w-1/3 h-[80%] gap-1 border rounded text-red-700 border-red-700"><Trash size="22" className="text-red-700 hidden sm:block"/>Delete</button>
      );
 }
  

@@ -51,13 +51,13 @@ const CreateNewPost = ({params}:{params : {id : string}}) => {
     }
 
     return ( 
-        <div className="w-full p-8">
+        <div className="w-full p-3 md:p-8 *:text-sm *:sm:text-base">
            <form action={createPostAction} className="flex flex-col items-center">
-            <div className="flex items-center w-full my-2 gap-2 *:shadow *:w-1/2 *:rounded-md *:outline-none *:h-10 *:pl-5 *:bg-zinc-100 *:dark:bg-zinc-700">
+            <div className="flex flex-col sm:flex-row items-center w-full my-2 gap-2 *:shadow *:w-full sm:*:w-1/2 *:rounded-md *:outline-none *:h-10 *:pl-5 *:bg-zinc-100  *:dark:bg-zinc-700">
             <input defaultValue={data?.title} type="text" maxLength={50} name="title" title="Title" placeholder="Enter Title..."/>
             <input defaultValue={data?.img} type="text" name="img" title="Image Source" placeholder="Enter Image Source ..."/>
             </div>
-            <div className="flex items-center w-full my-2 gap-2 *:shadow *:w-1/2 *:rounded-md *:outline-none *:h-10 *:pl-5 *:bg-zinc-100 *:dark:bg-zinc-700">
+            <div className="flex flex-col sm:flex-row items-center w-full my-2 gap-2 *:shadow *:w-full sm:*:w-1/2 *:rounded-md *:outline-none *:h-10 *:pl-5 *:bg-zinc-100  *:dark:bg-zinc-700">
             <input defaultValue={data?.writer} type="text" name="writer" title="Writer" placeholder="Enter Writer..."/>
             <select defaultValue={data?.category} name="category" className="pr-3" title="Category">
                 <option value="Lifestyle">Lifestyle</option>
@@ -72,13 +72,13 @@ const CreateNewPost = ({params}:{params : {id : string}}) => {
                 {ArticleArray.map((item,index)=>(
                     <div className="w-full h-10 rounded border flex items-center px-3 gap-1" key={index}>
                         <h1 className="w-5/6 text-ellipsis overflow-hidden whitespace-nowrap">{item.content}</h1>
-                        <button onClick={(e)=>deleteArticle(item,e)} className="flex items-center justify-center w-1/6 h-[90%] gap-1 border rounded text-red-900 border-red-700"><Trash size="22" className="text-red-900"/>Delete</button>
+                        <button onClick={(e)=>deleteArticle(item,e)} className="text-xs md:text-base flex items-center justify-center w-1/6 h-[90%] gap-1 border rounded text-red-900 border-red-700"><Trash size="22" className="text-red-900 hidden sm:block"/>Delete</button>
                     </div>
                 ))}
             </div>
             <button className="w-full rounded bg-zinc-900 text-white h-12">Edit Post</button>
            </form>
-           <form ref={articleForm} action={createNewArticle} className="w-full flex flex-col items-center h-40 m-2 border p-2 rounded dark:border-zinc-700">
+           <form ref={articleForm} action={createNewArticle} className="w-full flex flex-col items-center h-40 mt-2 sm:m-2 border p-2 rounded dark:border-zinc-700">
                 <textarea name="articleContent" className="h-2/3 w-full shadow rounded-md bg-zinc-100 dark:bg-zinc-700 outline-none mb-1 pt-2 pl-5 resize-none" placeholder="Enter Content..."></textarea>
                 <div className="w-full h-1/3 flex items-center gap-2 pt-2">
                 <select name="articleType" className="w-1/3 h-full shadow rounded-md bg-zinc-100 outline-none pl-5 dark:bg-zinc-700">
