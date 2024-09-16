@@ -9,7 +9,7 @@ const categoryList = [
 ]
 const Category = () => {
     return ( 
-        <div className="w-full flex flex-col items-center gap-2 mt-4">
+        <div className="w-full flex flex-col items-center gap-2 mt-4 px-2 md:px-0">
             {
                 categoryList.map((item,index)=>(
                     <Link key={index} href={`/categories/${item}`} className="w-full h-20 rounded-md flex items-center justify-center bg-yellow-100 text-xl font-medium">{item}</Link>

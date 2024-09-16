@@ -10,7 +10,7 @@ const LataestPosts = ({data} : {data : postType[]}) => {
     return ( 
         <div className="w-full pt-4 md:pt-0">
           <h1 className="w-full h-14 flex items-center pl-3 text-2xl font-medium md:mb-4">Latest Posts</h1>
-          <div className="w-full grid grid-cols-1 md:px-0 px-2 md:grid-cols-3 gap-5">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:px-0 px-2 lg:grid-cols-3 gap-5">
             {data.map((item : postType,index : number)=>(
                 <div key={index} className="col-span-1 row-span-1 h-72 md:h-96 px-4 py-5 border shadow rounded-2xl flex flex-col items-center gap-2 dark:border-zinc-900">
                     <div className="w-full h-[8%] flex items-center justify-between">
