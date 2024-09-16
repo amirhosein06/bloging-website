@@ -1,5 +1,5 @@
 'use client'
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { HambergerMenu,ArrowRight,Text,Moon,Sun1 } from "iconsax-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,17 +8,11 @@ import { useTheme } from 'next-themes';
 const SideBar = () => {
     const [openSideBar, setopenSideBar] = useState<string>("hidden");
     const { theme, setTheme } = useTheme();
-    const fontStatus : string = localStorage.getItem("fontSize") ?? "medium";
-    const [fontSize, setfontSize] = useState<string>(fontStatus);
+    const [fontSize, setfontSize] = useState<string>("medium");
 
     const setFontStatus = (fontCode : string): void=>{
-      localStorage.removeItem("fontSize");
       setfontSize(fontCode);
-      localStorage.setItem("fontSize",fontCode);
     }
-    useEffect(()=>{
-      document.documentElement.style.fontSize = fontStatus === "medium" ? "16px" : "19px";
-    },[])
 
     return ( 
     <>
