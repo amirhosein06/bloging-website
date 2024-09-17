@@ -5,7 +5,11 @@ import { postType } from "@/postTyping";
 
 const HomePage = async () => {
   const getdata = async ()=>{
-    const response = await fetch('https://az-blog-api.vercel.app/posts/',{cache: "no-cache"});
+    const response = await fetch('https://az-blog-api.vercel.app/posts/',{cache: "no-cache",
+      next: {
+          tags: ['posts'],
+      }
+  });
     return response.json();
 }
 const orginalData : postType[] = await getdata();
